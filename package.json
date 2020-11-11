@@ -1,0 +1,10 @@
+{
+  "name": "kan-shiki-gan",
+  "version": "0.0.1",
+  "description": "My personal CRM for job application",
+  "main": "index.js",
+  "repository": "https://github.com/DavidDavydovTech/kan-shiki-gan",
+  "author": "David J. Davydov <davydovjd611@gmail.com>",
+  "license": "NONE",
+  "private": true
+}
