@@ -12,7 +12,10 @@
           "*://www.linkedin.com/jobs/search/*",
           "*://www.linkedin.com/search/results/people/*"
         ],
-      "js": ["index.js"]
+      "js": [
+          "lib/arrive.min.js",
+          "index.js"
+        ]
     }
   ]
 }
