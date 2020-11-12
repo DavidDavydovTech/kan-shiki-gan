@@ -1,5 +1,6 @@
 'use strict';
 (() => {
+  const companies = {};
   let jobs = {};
   
   const settings = {
@@ -33,23 +34,18 @@
         .textContent
         .replace(/[ ]{2,}/gi, '')
         .replace(/[\n\t\r]{0,}/gi, '');
-      // Company ID
-      // newJob.id = document
-      //   .getElementsByClassName('jobs-details-top-card__job-title-link')[0]
-      //   .href
-      //   .match(/(?<=\?.{0,})(?<=currentJobId\=)[^=&]{0,}/gi)[0];
+      // Company ID | jobs-search-results-list__list-item--active => job-card-container__company-name
+      newJob.companyId = document
+        .getElementsByClassName('jobs-search-results-list__list-item--active')[0]
+        .getElementsByClassName('job-card-container__company-name')[0]
+        .href
+        .match(/(?<=\/company\/)[^/]{1,}/gi)[0];
+        
       // Job Description obs-description-content__text
-      const descContainer = document
+      newJob.desc = document
         .getElementsByClassName('jobs-description-content__text')[0]
-        .childNodes;
-
-      for (let node of descContainer) {
-        console.log(node.nodeName)
-        if (node.nodeName === 'SPAN') {
-          newJob.desc = node.textContent;
-          break;
-        }
-      }
+        .getElementsByTagName('span')[0]
+        .textContent;
 
       console.log('New job:', newJob);
     });
