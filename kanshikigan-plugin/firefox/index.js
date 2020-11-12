@@ -11,10 +11,12 @@
     }, 200)
   }
 
-  const jobList = document.getElementsByClassName("jobs-search-results__list")[0];
-  if (jobList === undefined || jobList === null) console.error("COULD NOT GET JOB LIST");
+  const jobListElement = document.getElementsByClassName("jobs-search-results__list")[0];
+  if (jobListElement === undefined || jobListElement === null) console.error("COULD NOT GET JOB LIST");
+  const jobDetailElement = document.getElementsByClassName("jobs-details__main-content")[0];
+  if (jobDetailElement === undefined || jobDetailElement === null) console.error("COULD NOT GET JOB LIST");
   
-  const observer = new MutationObserver((changes) => {
+  const jobList = new MutationObserver((changes) => {
     const {
       minimizeConnectionless
     } = settings;
@@ -33,6 +35,15 @@
   
     if (newJobs.length > 0) console.log("Found new jobs!~", newJobs);
   });
-  console.log(jobList);
-  observer.observe(jobList, { childList: true });  
+
+  const jobDetail = new MutationObserver((changes) => {
+    const newJob = {
+      jobId: window.location.search,
+    }
+
+    console.log(newJob);
+  });
+
+  jobList.observe(jobListElement, { childList: true });
+  jobDetail.observe(jobDetailElement, { childList: true });  
 })();
