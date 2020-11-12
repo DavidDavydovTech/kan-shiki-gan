@@ -14,7 +14,7 @@
   const jobListElement = document.getElementsByClassName("jobs-search-results__list")[0];
   if (jobListElement === undefined || jobListElement === null) console.error("COULD NOT GET JOB LIST");
   const jobDetailElement = document.getElementsByClassName("jobs-details__main-content")[0];
-  if (jobDetailElement === undefined || jobDetailElement === null) console.error("COULD NOT GET JOB LIST");
+  if (jobDetailElement === undefined || jobDetailElement === null) console.error("COULD NOT GET JOB DETAIL");
   
   const jobList = new MutationObserver((changes) => {
     const {
