@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "Helper plugin for KanShikiGan",
   "icons": {
-    "48": "./insight.svg"
+    "48": "./icons/insight.svg"
   },
   "content_scripts": [
     {
