@@ -1,6 +1,6 @@
 {
  "manifest_version": 2,
-  "name": "Borderify",
+  "name": "KanShikiGan",
   "version": "0.0.1",
   "description": "Helper plugin for KanShikiGan",
   "icons": {
@@ -8,8 +8,8 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://*.mozilla.org/*"],
-      "js": ["borderify.js"]
+      "matches": ["*://www.linkedin.com/jobs/search/*"],
+      "js": ["index.js"]
     }
   ]
 }
